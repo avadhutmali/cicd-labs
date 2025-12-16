@@ -1,0 +1,21 @@
+name : My First CI/CD Pipeline
+
+on :
+    push :
+        branches : ["main"]
+
+jobs:
+    say-hello:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name : Checkout-Code
+              uses: actions/checkout@v3
+
+            - name: Print Message
+              run: echo "Hello! The Robot is awake and working. "
+
+            - name: List Files
+              run: ls -la 
+
+        
